@@ -32,15 +32,17 @@ The checker writes `reports/links-<host>.md` and `reports/links-<host>.json`. It
 Example report:
 
 ```markdown
-## Broken (2)
+## Broken
+
 | Status | URL | Found on |
-|---|---|---|
+| --- | --- | --- |
 | 404 | https://www.example.com/missing | https://www.example.com/ |
 | 404 | https://www.example.com/broken.jpg | https://www.example.com/about |
 
-## Redirects (1)
+## Redirects (worth updating to the final URL)
+
 | Chain | URL | Final URL |
-|---|---|---|
+| --- | --- | --- |
 | 301 | https://www.example.com/old-page | https://www.example.com/about |
 ```
 
