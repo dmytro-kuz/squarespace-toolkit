@@ -1,0 +1,82 @@
+/* Squarespace 7.1: cleaner, sticky-feeling header
+   Paste into Website → Pages → Custom Code → Custom CSS */
+
+.header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  backdrop-filter: saturate(160%) blur(8px);
+}
+
+.header-title-text a {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Nav links: subtle underline on hover instead of a colour jump */
+.header-nav-item > a {
+  position: relative;
+  padding-bottom: 4px;
+}
+.header-nav-item > a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+.header-nav-item > a:hover::after,
+.header-nav-item--active > a::after {
+  transform: scaleX(1);
+}
+/* Squarespace 7.1: consistent, rounder buttons with a soft hover */
+
+.sqs-block-button-element,
+.header-actions .btn {
+  border-radius: 999px !important;
+  padding: 0.9em 1.8em !important;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sqs-block-button-element:hover,
+.header-actions .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  opacity: 1 !important;
+}
+/* Squarespace 7.1: compact footer with muted links */
+
+#footer-sections .page-section {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+#footer-sections a {
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.15s ease;
+}
+#footer-sections a:hover {
+  opacity: 1;
+}
+/* Squarespace 7.1: mobile fixes that come up on most sites */
+
+@media (max-width: 767px) {
+  /* Big headings that overflow on phones */
+  h1 { font-size: clamp(2rem, 9vw, 3rem) !important; line-height: 1.1; }
+  h2 { font-size: clamp(1.6rem, 7vw, 2.2rem) !important; }
+
+  /* Full-width buttons are easier to tap */
+  .sqs-block-button-element { display: block; width: 100%; text-align: center; }
+
+  /* Less vertical padding between sections */
+  .page-section { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+
+  /* Mobile menu items: larger tap targets */
+  .header-menu-nav-item a { padding: 0.6em 0; }
+}

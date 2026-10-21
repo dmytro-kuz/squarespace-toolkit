@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Squarespace CSS toolkit: before / after</title>
+<style>
+  /* Plain Squarespace 7.1-style defaults: what a site looks like before the fixes */
+  :root { --ink: #1d1d1f; --muted: #6e6e73; --accent: #8a5a2b; --bg: #fbf8f4; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Georgia, "Times New Roman", serif; color: var(--ink); background: var(--bg); }
+  a { color: inherit; }
+  .header { position: sticky; top: 0; z-index: 10; background: rgba(251,248,244,.92); }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; max-width: 1100px; margin: 0 auto; padding: 20px 24px; }
+  .header-title-text a { text-decoration: none; font-size: 1.4rem; }
+  .header-nav-list { display: flex; gap: 24px; }
+  .header-nav-item > a { text-decoration: none; color: var(--muted); }
+  .header-nav-item > a:hover { color: var(--accent); }
+  .header-nav-item--active > a { color: var(--ink); }
+  .btn, .sqs-block-button-element { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; padding: .7em 1.2em; border-radius: 0; font-family: system-ui, sans-serif; font-size: .95rem; }
+  .btn:hover, .sqs-block-button-element:hover { opacity: .8; }
+  .page-section { padding: 6rem 24px; }
+  .content { max-width: 1100px; margin: 0 auto; }
+  h1 { font-size: 4.2rem; margin: 0 0 1rem; font-weight: 400; }
+  h2 { font-size: 2.6rem; font-weight: 400; margin: 0 0 1rem; }
+  p { line-height: 1.6; color: var(--muted); max-width: 60ch; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 2rem; }
+  .card { background: #fff; padding: 24px; }
+  .card h3 { margin: 0 0 .5rem; font-weight: 400; }
+  #footer-sections { background: #2b2420; color: #eee; }
+  #footer-sections .page-section { padding: 5rem 24px; }
+  #footer-sections a { margin-right: 18px; }
+  .header-menu { display: none; }
+  @media (max-width: 767px) {
+    .header-nav-list, .header-actions { display: none; }
+    .header-menu { display: block; background: #fff; padding: 8px 24px; }
+    .header-menu-nav-item a { display: block; padding: 4px 0; text-decoration: none; }
+  }
+
+  /* Demo controls (not part of the toolkit) */
+  .demo-bar { position: fixed; right: 16px; bottom: 16px; z-index: 100; display: flex; gap: 4px; padding: 4px; background: #111; border-radius: 999px; font: 600 14px system-ui, sans-serif; box-shadow: 0 6px 24px rgba(0,0,0,.25); }
+  .demo-bar button { border: 0; background: transparent; color: #bbb; padding: 10px 16px; border-radius: 999px; cursor: pointer; font: inherit; }
+  .demo-bar button[aria-pressed="true"] { background: #fff; color: #111; }
+  .demo-note { font: 13px/1.5 system-ui, sans-serif; background: #111; color: #ddd; text-align: center; padding: 8px 16px; margin: 0; max-width: none; }
+  .demo-note a { color: #fff; }
+</style>
+<link id="toolkit" rel="stylesheet" href="../css/all.css" disabled>
+</head>
+<body>
+<p class="demo-note">Demo page using Squarespace 7.1 class names. Toggle <b>Before / After</b> (bottom right) to apply <a href="https://github.com/dmytro-kuz/squarespace-toolkit/blob/main/css/all.css">css/all.css</a>.</p>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="header-title-text"><a href="#">Hearth &amp; Crumb</a></div>
+    <nav class="header-nav-list">
+      <div class="header-nav-item header-nav-item--active"><a href="#">Home</a></div>
+      <div class="header-nav-item"><a href="#menu">Menu</a></div>
+      <div class="header-nav-item"><a href="#visit">Visit</a></div>
+      <div class="header-nav-item"><a href="#visit">About</a></div>
+    </nav>
+    <div class="header-actions"><a class="btn" href="#visit">Order online</a></div>
+  </div>
+  <div class="header-menu">
+    <div class="header-menu-nav-item"><a href="#menu">Menu</a></div>
+    <div class="header-menu-nav-item"><a href="#visit">Visit</a></div>
+  </div>
+</header>
+
+<main>
+  <section class="page-section">
+    <div class="content">
+      <h1>Sourdough, baked every morning</h1>
+      <p>A small neighbourhood bakery. Fresh loaves, pastries and coffee from 7am, six days a week.</p>
+      <p><a class="sqs-block-button-element" href="#menu">See today's menu</a></p>
+    </div>
+  </section>
+
+  <section class="page-section" id="menu" style="background:#f3ece3">
+    <div class="content">
+      <h2>Today's menu</h2>
+      <div class="grid">
+        <div class="card"><h3>Country loaf</h3><p>48-hour ferment, crackly crust.</p></div>
+        <div class="card"><h3>Cardamom bun</h3><p>Swedish-style, brushed with syrup.</p></div>
+        <div class="card"><h3>Flat white</h3><p>Single-origin, roasted locally.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section" id="visit">
+    <div class="content">
+      <h2>Visit us</h2>
+      <p>12 Market Street. Tuesday to Sunday, 7:00 to 15:00.</p>
+      <p><a class="sqs-block-button-element" href="#">Get directions</a></p>
+    </div>
+  </section>
+</main>
+
+<footer id="footer-sections">
+  <section class="page-section">
+    <div class="content">
+      <p style="color:#ccc">© Hearth &amp; Crumb</p>
+      <a href="#">Instagram</a><a href="#">Contact</a><a href="#">Privacy</a>
+    </div>
+  </section>
+</footer>
+
+<div class="demo-bar" role="group" aria-label="Toggle CSS fixes">
+  <button type="button" data-mode="before" aria-pressed="true">Before</button>
+  <button type="button" data-mode="after" aria-pressed="false">After</button>
+</div>
+<script>
+  const sheet = document.getElementById('toolkit');
+  const buttons = document.querySelectorAll('.demo-bar button');
+  function setMode(mode) {
+    sheet.disabled = mode !== 'after';
+    buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === mode)));
+  }
+  buttons.forEach(b => b.addEventListener('click', () => setMode(b.dataset.mode)));
+  if (location.hash === '#after') setMode('after');
+</script>
+</body>
+</html>

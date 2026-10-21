@@ -1,0 +1,16 @@
+/* Squarespace 7.1: mobile fixes that come up on most sites */
+
+@media (max-width: 767px) {
+  /* Big headings that overflow on phones */
+  h1 { font-size: clamp(2rem, 9vw, 3rem) !important; line-height: 1.1; }
+  h2 { font-size: clamp(1.6rem, 7vw, 2.2rem) !important; }
+
+  /* Full-width buttons are easier to tap */
+  .sqs-block-button-element { display: block; width: 100%; text-align: center; }
+
+  /* Less vertical padding between sections */
+  .page-section { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+
+  /* Mobile menu items: larger tap targets */
+  .header-menu-nav-item a { padding: 0.6em 0; }
+}

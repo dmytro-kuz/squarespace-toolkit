@@ -1,0 +1,13 @@
+{
+  "name": "squarespace-toolkit",
+  "version": "1.0.0",
+  "description": "Broken-link checker and CSS customizations for Squarespace 7.1 sites",
+  "type": "module",
+  "bin": { "linkcheck": "src/cli.js" },
+  "scripts": {
+    "check": "node src/cli.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": { "node": ">=20" },
+  "license": "MIT"
+}

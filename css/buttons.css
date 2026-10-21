@@ -1,0 +1,17 @@
+/* Squarespace 7.1: consistent, rounder buttons with a soft hover */
+
+.sqs-block-button-element,
+.header-actions .btn {
+  border-radius: 999px !important;
+  padding: 0.9em 1.8em !important;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sqs-block-button-element:hover,
+.header-actions .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  opacity: 1 !important;
+}
